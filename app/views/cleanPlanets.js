@@ -20,7 +20,7 @@ function loadSectionView(root, data) {
 
   const img = document.createElement("img");
   img.classList.add("wall-e");
-  img.src = `../assets/${data.walle}.png`;
+  img.src = `./assets/${data.walle}.png`;
   img.alt = "Wall-E cleaning";
 
   const speechCont = document.createElement("div");
