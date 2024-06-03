@@ -1,0 +1,346 @@
+body {
+    background-image: url("./space1.png");
+    background-color: #cccccc;
+  }
+  
+  h1{
+    color: white;
+  }
+  
+  .wall-e{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .speech-container{
+      max-width: 20vw;
+      margin: 0 auto;
+  }
+  
+  .speech-bubble {
+    background-color: #e0e5ec;
+    color: black;
+    font-weight: bold;
+    box-shadow: -8px -8px 20px 0px #fff9, -6px -6px 6px 0px #fff9,
+  8px 8px 20px 0px #0001, 5px 5px 6px 0px #0001, inset 0px 0px 0px 0px #fff9,
+  inset 0px 0px 0px 0px #0001, inset 0px 0px 0px 0px #fff9,
+  inset 0px 0px 0px 0px #0001;
+    font-size: 1.2em;
+    line-height: 2;
+    border-radius: 10px;
+    padding: 2px 20px;
+    margin-top: 60px;
+  
+    &:nth-child(1) {
+      border-left: 10px solid orange;
+    }
+  
+    &:nth-child(1):after {
+      content: '';
+      display: block;
+      position: relative;
+      margin-top: -40px;
+      padding-top: 0px;
+      bottom: -30px;
+      left: 20px;
+      border-width: 30px 0 0 30px;
+      border-style: solid;
+      border-color: #e0e5ec transparent;	
+      width: 2px;
+      border-radius: 0 0 40px 0;
+    }
+  }
+  
+  button, select {
+    position: relative;
+    padding: 10px 50px;
+    border-radius: 7px;
+    border: 1px solid rgb(61, 106, 255);
+    font-size: 14px;
+    font-weight: bolder;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    background: transparent;
+    color: #cac0c0;
+    overflow: hidden;
+    box-shadow: 0 0 0 0 transparent;
+    -webkit-transition: color 0.2s ease-in; 
+    -moz-transition: color 0.2s ease-in;
+    transition: color 0.2s ease-in;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #10142f; 
+  }
+  
+  button:hover {
+    color: #FF0000; 
+  }
+  
+  button:hover {
+    background: rgb(61, 106, 255);
+    box-shadow: 0 0 30px 5px rgba(0, 142, 236, 0.815);
+    -webkit-transition: all 0.2s ease-out;
+    -moz-transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out;
+  }
+    
+  button:hover::before {
+    -webkit-animation: sh02 0.5s 0s linear;
+    -moz-animation: sh02 0.5s 0s linear;
+    animation: sh02 0.5s 0s linear;
+  }
+    
+  button::before {
+    content: '';
+    display: block;
+    width: 0px;
+    height: 86%;
+    position: absolute;
+    top: 7%;
+    left: 0%;
+    opacity: 0;
+    background: #fff;
+    box-shadow: 0 0 50px 30px #fff;
+    -webkit-transform: skewX(-20deg);
+    -moz-transform: skewX(-20deg);
+    -ms-transform: skewX(-20deg);
+    -o-transform: skewX(-20deg);
+    transform: skewX(-20deg);
+  }
+    
+  @keyframes sh02 {
+    from {
+      opacity: 0;
+      left: 0%;
+    }
+    
+    50% {
+      opacity: 1;
+    }
+    
+    to {
+      opacity: 0;
+      left: 100%;
+    }
+  }
+    
+  button:active {
+    box-shadow: 0 0 0 0 transparent;
+    -webkit-transition: box-shadow 0.2s ease-in;
+    -moz-transition: box-shadow 0.2s ease-in;
+    transition: box-shadow 0.2s ease-in;
+  }
+  
+  @keyframes glow {
+    0% { box-shadow: 0 0 5px #c7aa54; }
+    50% { box-shadow: 0 0 20px #c7aa54; }
+    100% { box-shadow: 0 0 5px #c7aa54; }
+  }
+  
+  select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: 1px solid #c7aa54;
+    border-radius: 5px;
+    background-color: #282c37;
+    color: #c7aa54;
+    cursor: pointer;
+    outline: none;
+    animation: glow 1.5s infinite alternate;
+  }
+  
+  select::after {
+    content: '\25BC';
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    font-size: 16px;
+    color: #c7aa54;
+    pointer-events: none;
+  }
+
+
+  .modal-content {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(224, 229, 236, 0.65);
+    color: black;
+    font-weight: bold;
+    box-shadow: -8px -8px 20px 0px #fff9, -6px -6px 6px 0px #fff9,
+        8px 8px 20px 0px #0001, 5px 5px 6px 0px #0001, inset 0px 0px 0px 0px #fff9,
+        inset 0px 0px 0px 0px #0001, inset 0px 0px 0px 0px #fff9,
+        inset 0px 0px 0px 0px #0001;
+    font-size: 1.2em;
+    line-height: 2;
+    border-radius: 10px;
+    padding: 2px 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+    margin: 0 auto; /* Center the modal horizontally */
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+
+
+      /*learn*/
+
+.allPlanets {
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  flex-wrap: wrap; /* Allow flex items to wrap to the next line */
+}
+
+.planet-card {
+  background-color: rgba(41, 41, 179, 0.5);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.1);
+  padding: 16px;
+  margin: 16px; /* Adjust margin as needed */
+  transition: transform 0.2s;
+  width: 300px; /* Set a fixed width */
+  box-sizing: border-box;
+}
+
+.planet-card:hover {
+  transform: scale(1.05); /* Scale effect on hover */
+}
+
+.planet-card h2 {
+  margin-top: 0; /* Remove top margin for consistency */
+}
+
+
+
+
+                 /*clean*/
+
+
+.planets-list {
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  flex-wrap: wrap; /* Allow flex items to wrap to the next line */
+}
+
+
+             
+
+.cleanCard {
+  background-color: rgba(41, 41, 179, 0.5); /* Semi-transparent blue background */
+  color: white; /* White text color */
+  border: none; /* No border */
+  border-radius: 10px; /* Rounded corners */
+  padding: 20px; /* Increased padding for better spacing */
+  margin: 16px; /* Increased margin for better spacing */
+  cursor: pointer; /* Change cursor to pointer on hover */
+  /*display: inline-block;  Display cards as inline-block */
+  text-align: center; /* Justify content to the left */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.1); /* Box shadow for pop-out effect */
+}
+
+.cleanCard:hover {
+  background-color: rgba(0, 0, 255, 0.7); /* Darker semi-transparent blue background on hover */
+}
+
+
+
+
+
+
+
+
+
+                          /* Modal styles */
+.modal {
+  display: flex;
+  justify-content: center; /* Horizontally center */
+  align-items: center; /* Vertically center, tried flex-start too ;*/
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background overlay */
+}
+
+.modal-content {
+  background-color: #fefefe;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  max-width: 400px; /* Set maximum width for the modal content */
+  position: relative; /* Ensure content stays centered */
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+
+
+                             /* Form styles */
+.form-group {
+  margin-bottom: 16px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.form-group button {
+  background-color: rgba(41, 41, 179, 0.5);
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.form-group button:hover {
+  background-color: rgba(41, 41, 179, 0.7);
+}
